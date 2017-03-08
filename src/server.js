@@ -92,6 +92,8 @@ const HTML = ({ content, meta, store }) => (
   </html>
 )
 
-app.listen(8080, function () {
-  console.log('Server listening on http://localhost:8080, Ctrl+C to stop')
+const port = process.env.PORT || 8080
+
+app.listen(port, function() {
+  console.log('App is running on port ' + port + ', Ctrl+C to stop')
 })
