@@ -1,11 +1,15 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const extractCSS = new ExtractTextPlugin('styles.css')
 
 module.exports = [
   // client settings
   {
-    entry: './src/client.js',
+    entry: [
+      './src/client.js',
+      './src/styles/app.css'
+    ],
     output: {
       path: path.join(__dirname, '..', 'public'),
       filename: 'bundle.js',
@@ -33,11 +37,7 @@ module.exports = [
       ]
     },
     plugins: [
-      new ExtractTextPlugin({
-        filename: 'styles.css',
-        disable: false,
-        allChunks: true
-      }),
+      extractCSS,
       new webpack.LoaderOptionsPlugin({
         options: {
           postcss: [
@@ -55,7 +55,10 @@ module.exports = [
 
   // server settings
   {
-    entry: './src/server.js',
+    entry: [
+      './src/server.js',
+      './src/styles/app.css'
+    ],
     target: 'node',
     node: {
       __dirname: false,
@@ -92,11 +95,7 @@ module.exports = [
       ]
     },
     plugins: [
-      new ExtractTextPlugin({
-        filename: 'styles.css',
-        disable: false,
-        allChunks: true
-      }),
+      extractCSS,
       new webpack.LoaderOptionsPlugin({
         options: {
           postcss: [

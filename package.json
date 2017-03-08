@@ -4,7 +4,7 @@
   "license": "ISC",
   "scripts": {
     "start": "webpack --config ./webpack/webpack.dev.config.js && node ./dist/server.js",
-    "build": "NODE_ENV=production webpack --config ./webpack/webpack.prod.config.js",
+    "build": "NODE_ENV=production webpack -p --config ./webpack/webpack.prod.config.js",
     "lint:js": "eslint src"
   },
   "dependencies": {

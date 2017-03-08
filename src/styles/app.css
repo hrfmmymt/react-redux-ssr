@@ -50,6 +50,6 @@ p {
 
 .home {
   & h2 {
-    color: #f00;
+    color: #000;
   }
 }
