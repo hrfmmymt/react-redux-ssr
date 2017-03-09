@@ -31,7 +31,7 @@ Detail.fetchData = (dispatch) => {
     type: 'META-SET',
     meta: {
       title: 'Detail Container fetchData',
-      description: 'This is write by /src/containers/detail.js fetchData',
+      description: '/src/containers/detail.js fetchData',
       img: 'detail_container.jpeg',
       url: '/src/containers/detail.js'
     }

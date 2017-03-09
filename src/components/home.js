@@ -5,7 +5,7 @@ export default class Home extends React.Component {
     if (this.props.didMount) {
       this.props.actions.meta.set({
         title: 'Home Components',
-        description: 'This is write by /src/components/home.js actions',
+        description: '/src/components/home.js actions',
         img: 'home_components.jpeg',
         url: '/src/components/home.js'
       })
@@ -19,4 +19,9 @@ export default class Home extends React.Component {
       </div>
     )
   }
+}
+
+Home.propTypes = {
+  didMount: React.PropTypes.bool,
+  actions: React.PropTypes.object
 }

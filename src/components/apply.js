@@ -5,7 +5,7 @@ export default class Apply extends React.Component {
     if (this.props.didMount) {
       this.props.actions.meta.set({
         title: 'Apply Components',
-        description: 'This is write by /src/components/apply.js actions',
+        description: '/src/components/apply.js actions',
         img: 'apply_components.jpeg',
         url: '/src/components/apply.js'
       })
@@ -19,4 +19,9 @@ export default class Apply extends React.Component {
       </div>
     )
   }
+}
+
+Apply.propTypes = {
+  didMount: React.PropTypes.bool,
+  actions: React.PropTypes.object
 }

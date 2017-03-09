@@ -12,7 +12,7 @@ class NoMatch extends React.Component {
   }
 }
 
-module.exports = (
+const routes = (
   <Route path="/" component={App}>
     <IndexRoute component={Home} />
     <Route path="/detail" component={Detail} />
@@ -20,3 +20,5 @@ module.exports = (
     <Route path="*" component={NoMatch} status="404" />
   </Route>
 )
+
+export default routes

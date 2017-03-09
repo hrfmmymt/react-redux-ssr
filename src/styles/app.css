@@ -16,6 +16,16 @@ p {
   padding: 0;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 .container {
   width: 1170px;
   margin: 0 auto;
@@ -24,10 +34,12 @@ p {
 .nav {
   display: flex;
   justify-content: space-around;
+
   & li {
     list-style: none;
     width: 20%;
     text-align: center;
+
     & a {
       display: block;
       text-decoration: none;
@@ -41,15 +53,27 @@ p {
   border-collapse: collapse;
   width: 88%;
   margin: 2em auto;
+
   & th,
   & td {
     border: 1px solid #ccc;
     padding: 1em;
+    word-break: break-word;
   }
 }
 
 .home {
   & h2 {
     color: #000;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+
+  .table {
+    width: 100%;
   }
 }

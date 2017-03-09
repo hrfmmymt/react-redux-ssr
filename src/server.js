@@ -69,10 +69,10 @@ app.use((req, res) => {
 const HTML = ({ content, meta, store }) => (
   <html>
     <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>{meta.title}</title>
-      <link rel="stylesheet" type="text/css" href="/styles.css" />
+      <link rel="stylesheet" href="/styles.css" />
 
       <meta property="og:type" content="website" />
       <meta property="og:title" content={meta.title} />
@@ -91,6 +91,12 @@ const HTML = ({ content, meta, store }) => (
     </body>
   </html>
 )
+
+HTML.propTypes = {
+  content: React.PropTypes.string.isRequired,
+  meta: React.PropTypes.object.isRequired,
+  store: React.PropTypes.object.isRequired
+}
 
 const port = process.env.PORT || 8080
 

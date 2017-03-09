@@ -32,7 +32,7 @@ App.fetchData = (dispatch) => {
     type: 'META-SET',
     meta: {
       title: 'App Container fetchData',
-      description: 'This is write by /src/containers/app.js fetchData',
+      description: '/src/containers/app.js fetchData',
       img: 'app_container.jpeg',
       url: '/src/containers/app.js'
     }

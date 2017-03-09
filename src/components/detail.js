@@ -5,7 +5,7 @@ export default class Detail extends React.Component {
     if (this.props.didMount) {
       this.props.actions.meta.set({
         title: 'Detail Components',
-        description: 'This is write by /src/components/detail.js actions',
+        description: '/src/components/detail.js actions',
         img: 'detail_components.jpeg',
         url: '/src/components/detail.js'
       })
@@ -19,4 +19,9 @@ export default class Detail extends React.Component {
       </div>
     )
   }
+}
+
+Detail.propTypes = {
+  didMount: React.PropTypes.bool,
+  actions: React.PropTypes.object
 }
