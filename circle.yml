@@ -18,4 +18,4 @@ dependencies:
 
 test:
   override:
-    - yarn run cover
+    - yarn test:cover
