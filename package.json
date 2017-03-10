@@ -8,6 +8,7 @@
     "build": "NODE_ENV=production webpack -p --config ./webpack/webpack.prod.config.js",
     "lint:css": "stylelint ./src/**/*.css",
     "lint:js": "eslint ./src",
+    "flow": "flow",
     "test": "NODE_ENV=test ava",
     "test:cover": "nyc --reporter=lcov --reporter=text yarn test"
   },
@@ -42,6 +43,7 @@
     "eslint-plugin-react": "^6.10.0",
     "eslint-plugin-standard": "^2.1.1",
     "extract-text-webpack-plugin": "^2.1.0",
+    "flow-bin": "^0.41.0",
     "json-loader": "^0.5.4",
     "nyc": "^10.1.2",
     "postcss-custom-properties": "^5.0.2",

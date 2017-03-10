@@ -1,3 +1,5 @@
+/* @flow */
+
 const initialState = {
   'title': null,
   'description': null,
@@ -5,7 +7,7 @@ const initialState = {
   'url': null
 }
 
-export default function update(state = initialState, action) {
+export default function update(state: Object = initialState, action: Object) {
   switch (action.type) {
     case 'META-SET':
       return action.meta
