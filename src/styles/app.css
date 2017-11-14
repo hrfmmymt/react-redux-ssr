@@ -1,23 +1,18 @@
+@charset 'utf-8';
+
 html,
 body,
 div,
 h1,
+h2,
 ul,
 li,
-table,
-thead,
-tbody,
-tfoot,
-tr,
-th,
-td,
+dl,
+dt,
+dd,
 p {
   margin: 0;
   padding: 0;
-}
-
-html {
-  box-sizing: border-box;
 }
 
 *,
@@ -26,54 +21,69 @@ html {
   box-sizing: inherit;
 }
 
-.container {
-  width: 1170px;
-  margin: 0 auto;
+html {
+  box-sizing: border-box;
 }
 
-.nav {
-  display: flex;
-  justify-content: space-around;
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  padding: 2%;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+.main {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 10em 1fr;
+}
+
+nav {
+  grid-row: 1;
+  grid-column: 1;
 
   & li {
     list-style: none;
-    width: 20%;
-    text-align: center;
 
     & a {
       display: block;
-      text-decoration: none;
       padding: 2em;
-      border-bottom: 2px solid #ccc;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }
 
-.table {
-  border-collapse: collapse;
-  width: 88%;
-  margin: 2em auto;
+.screen {
+  grid-row: 1;
+  grid-column: 2;
 
-  & th,
-  & td {
-    border: 1px solid #ccc;
-    padding: 1em;
-    word-break: break-word;
+  & > div {
+    grid-row: 1;
+    margin-bottom: 2em;
   }
 }
 
-.home {
-  & h2 {
-    color: #000;
-  }
-}
+dl {
+  padding: 2%;
+  grid-row: 2;
 
-@media screen and (max-width: 480px) {
-  .container {
-    width: 100vw;
+  & dt {
+    padding-left: .2em;
+    border-left: solid 8px orange;
+    font-weight: bold;
   }
 
-  .table {
-    width: 100%;
+  & dd {
+    margin-bottom: 2em;
+    padding-left: .5em;
+    font-size: .8em;
   }
 }

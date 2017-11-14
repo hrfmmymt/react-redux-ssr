@@ -72,6 +72,7 @@ const HTML = ({ content, meta, store }) => (
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <title>{meta.title}</title>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
       <link rel="stylesheet" href="/styles.css" />
 
       <meta property="og:type" content="website" />
@@ -81,7 +82,7 @@ const HTML = ({ content, meta, store }) => (
       <meta property="og:url" content={meta.url} />
       <meta property="og:site_name" content="mycontest" />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@twitter_account" />
+      <meta name="twitter:site" content="@hrfmmymt" />
 
       <script dangerouslySetInnerHTML={{ __html: `window.__initialState__=${serialize(store.getState())};` }} />
     </head>
