@@ -11,13 +11,12 @@ export default class App extends React.Component {
 
     return (
       <div className="container">
-        <h1>React-Redux-Server-Side-Rendering-Sample</h1>
         <div className="main">
           <nav>
             <ul>
-              <li><Link to="/">/Home</Link></li>
-              <li><Link to="/detail">/Detail</Link></li>
-              <li><Link to="/apply">/Apply</Link></li>
+              <li><Link to="/">トップ</Link></li>
+              <li><Link to="/detail">映画出演</Link></li>
+              <li><Link to="/apply">ドラマ出演</Link></li>
             </ul>
           </nav>
 

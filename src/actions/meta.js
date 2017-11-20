@@ -5,6 +5,6 @@ export function set(meta) {
         type: 'META-SET',
         meta: meta
       })
-    }, 500)
+    }, 0)
   }
 }

@@ -43,6 +43,7 @@
     "eslint-plugin-react": "^6.10.0",
     "eslint-plugin-standard": "^2.1.1",
     "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^1.1.5",
     "flow-bin": "^0.41.0",
     "json-loader": "^0.5.4",
     "nyc": "^10.1.2",
@@ -58,6 +59,7 @@
     "style-loader": "^0.13.1",
     "stylelint": "^7.9.0",
     "stylelint-config-standard": "^16.0.0",
+    "url-loader": "^0.6.2",
     "webpack": "^2.2.1"
   },
   "ava": {

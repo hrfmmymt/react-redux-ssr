@@ -13,9 +13,13 @@ export default class Home extends React.Component {
   }
 
   render() {
+    const profileImage = require('../../static/profile.jpg')
+
     return (
       <div className="home">
-        <h2>This page is /</h2>
+        <h2>某のホームページ</h2>
+        <img src={profileImage} width='256'/>
+        <span>★★★　最新情報　★★★</span>
       </div>
     )
   }

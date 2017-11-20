@@ -43,6 +43,16 @@ h1 {
   grid-template-columns: 10em 1fr;
 }
 
+.home {
+  & h2 {
+    text-align: center;
+  }
+
+  & img {
+    vertical-align: middle;
+  }
+}
+
 nav {
   grid-row: 1;
   grid-column: 1;

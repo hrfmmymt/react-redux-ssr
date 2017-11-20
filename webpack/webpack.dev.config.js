@@ -33,6 +33,9 @@ module.exports = [
             ],
             publicPath: '/'
           })
+        }, {
+          test: /\.(jpg|png|svg)$/,
+          loader: 'file-loader'
         }
       ]
     },
@@ -91,6 +94,9 @@ module.exports = [
         {
           test: /\.json$/,
           loader: 'json-loader'
+        }, {
+          test: /\.(jpg|png|svg)$/,
+          loader: 'file-loader'
         }
       ]
     },
