@@ -13,14 +13,14 @@
     "test:cover": "nyc --reporter=lcov --reporter=text yarn test"
   },
   "dependencies": {
-    "express": "^4.15.2",
+    "express": "^4.16.2",
     "prop-types": "^15.6.0",
-    "react": "^15.5.0",
-    "react-dom": "^15.5.0",
-    "react-redux": "^5.0.3",
+    "react": "^15.5",
+    "react-dom": "^15.5",
+    "react-redux": "^5.0.6",
     "react-router": "^3.0.2",
     "react-router-redux": "^4.0.8",
-    "redux": "^3.6.0",
+    "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
