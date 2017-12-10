@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react'
 import { Link } from 'react-router'
 
@@ -41,7 +42,7 @@ export default class App extends React.Component {
 }
 
 App.propTypes = {
-  actions: React.PropTypes.object.isRequired,
-  meta: React.PropTypes.object.isRequired,
-  children: React.PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  meta: PropTypes.object.isRequired,
+  children: PropTypes.object.isRequired
 }

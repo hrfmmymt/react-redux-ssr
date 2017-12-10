@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react'
 
 export default class Home extends React.Component {
@@ -26,6 +27,6 @@ export default class Home extends React.Component {
 }
 
 Home.propTypes = {
-  didMount: React.PropTypes.bool,
-  actions: React.PropTypes.object
+  didMount: PropTypes.bool,
+  actions: PropTypes.object
 }
