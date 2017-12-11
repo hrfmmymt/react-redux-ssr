@@ -14,7 +14,7 @@ import routes from './routes'
 const store = configureStore(browserHistory, window.__initialState__)
 const history = syncHistoryWithStore(browserHistory, store)
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <Provider store={store}>
     <Router history={history} routes={routes} />
   </Provider>,
