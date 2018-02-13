@@ -9,8 +9,9 @@
     "lint:css": "stylelint ./src/**/*.css",
     "lint:js": "eslint ./src",
     "flow": "flow",
-    "test": "NODE_ENV=test ava",
-    "test:cover": "nyc --reporter=lcov --reporter=text yarn test"
+    "test:ava": "NODE_ENV=test ava",
+    "test:jest": "NODE_ENV=test jest",
+    "test:cover": "nyc --reporter=lcov --reporter=text yarn test:ava"
   },
   "dependencies": {
     "express": "^4.16.2",
@@ -28,6 +29,7 @@
     "ava": "^0.25.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
+    "babel-jest": "^22.2.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
@@ -37,6 +39,7 @@
     "compression": "^1.7.1",
     "css-loader": "^0.28.9",
     "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.17.0",
     "eslint-config-standard": "^11.0.0-beta.0",
     "eslint-plugin-import": "^2.8.0",
@@ -46,6 +49,8 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.6",
     "flow-bin": "^0.65.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^22.2.1",
     "json-loader": "^0.5.7",
     "nyc": "^11.4.1",
     "postcss-custom-properties": "^6.2.0",
@@ -63,11 +68,25 @@
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0"
   },
+  "jest": {
+    "unmockedModulePathPatterns": [
+      "node_modules/react/",
+      "node_modules/enzyme/"
+    ],
+    "setupTestFrameworkScriptFile": "./test/setup.js",
+    "moduleNameMapper": {
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+    }
+  },
   "ava": {
     "babel": "inherit",
-    "files": "./src/**/*.test.js",
     "require": [
-      "babel-register"
+      "babel-register",
+      "babel-polyfill",
+      "./test/setup"
+    ],
+    "files": [
+      "src/**/*.test.js"
     ]
   }
 }
