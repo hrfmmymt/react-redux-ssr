@@ -1,5 +1,6 @@
-import PropTypes from 'prop-types'
 import React from 'react'
+import PropTypes from 'prop-types'
+import styles from './home.scss'
 
 export default class Home extends React.Component {
   componentWillMount() {
@@ -17,7 +18,7 @@ export default class Home extends React.Component {
     const profileImage = require('../../static/profile.jpg')
 
     return (
-      <div className="home">
+      <div className={styles.wrapper}>
         <h2>某のホームページ</h2>
         <span>★★★　最新情報　★★★</span>
       </div>

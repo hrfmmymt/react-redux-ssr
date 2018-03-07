@@ -1,0 +1,58 @@
+.container {
+  padding: 2%;
+}
+
+h1 {
+  margin-bottom: 1em;
+}
+
+.main {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 10em 1fr;
+}
+
+nav {
+  grid-row: 1;
+  grid-column: 1;
+
+  & li {
+    list-style: none;
+
+    & a {
+      display: block;
+      padding: 2em;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.screen {
+  grid-row: 1;
+  grid-column: 2;
+
+  & > div {
+    grid-row: 1;
+    margin-bottom: 2em;
+  }
+}
+
+dl {
+  padding: 2%;
+  grid-row: 2;
+
+  & dt {
+    padding-left: .2em;
+    border-left: solid 8px orange;
+    font-weight: bold;
+  }
+
+  & dd {
+    margin-bottom: 2em;
+    padding-left: .5em;
+    font-size: .8em;
+  }
+}

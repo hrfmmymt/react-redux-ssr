@@ -1,14 +1,12 @@
 const path = require('path')
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const extractCSS = new ExtractTextPlugin('styles.css')
 
 module.exports = [
   // client settings
   {
     entry: [
-      './src/client.js',
-      './src/styles/app.css'
+      './src/client.js'
     ],
     output: {
       path: path.join(__dirname, '..', 'public'),
@@ -23,44 +21,39 @@ module.exports = [
           use: 'babel-loader'
         },
         {
-          test: /\.css$/,
-          include: /styles\/.+/,
+          test: /\.s?css$/,
           use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
             use: [
-              'css-loader',
-              'postcss-loader'
-            ],
-            publicPath: '/'
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                  importLoaders: 1,
+                  sourceMap: true,
+                  localIdentName: '[name]__[local]___[hash:base64:5]'
+                }
+              },
+              'postcss-loader',
+              'sass-loader'
+            ]
           })
-        }, {
+        },
+        {
           test: /\.(jpg|png|svg)$/,
           loader: 'file-loader'
         }
       ]
     },
     plugins: [
-      extractCSS,
-      new webpack.LoaderOptionsPlugin({
-        options: {
-          postcss: [
-            require('postcss-import')(),
-            require('autoprefixer')({
-              browsers: ['last 2 versions']
-            }),
-            require('postcss-custom-properties')(),
-            require('postcss-nested')()
-          ]
-        }
-      })
+      new ExtractTextPlugin('styles.css')
     ]
   },
 
   // server settings
   {
     entry: [
-      './src/server.js',
-      './src/styles/app.css'
+      './src/server.js'
     ],
     target: 'node',
     node: {
@@ -80,15 +73,22 @@ module.exports = [
           loader: 'babel-loader'
         },
         {
-          test: /\.css$/,
-          include: /styles\/.+/,
+          test: /\.s?css$/,
           use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
             use: [
-              'css-loader',
-              'postcss-loader'
-            ],
-            publicPath: '/'
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true,
+                  importLoaders: 1,
+                  sourceMap: true,
+                  localIdentName: '[name]__[local]___[hash:base64:5]'
+                }
+              },
+              'postcss-loader',
+              'sass-loader'
+            ]
           })
         },
         {
@@ -101,19 +101,7 @@ module.exports = [
       ]
     },
     plugins: [
-      extractCSS,
-      new webpack.LoaderOptionsPlugin({
-        options: {
-          postcss: [
-            require('postcss-import')(),
-            require('autoprefixer')({
-              browsers: ['last 2 versions']
-            }),
-            require('postcss-custom-properties')(),
-            require('postcss-nested')()
-          ]
-        }
-      })
+      new ExtractTextPlugin('styles.css')
     ]
   }
 ]

@@ -2,6 +2,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from 'react-router'
 
+import styles from './app.scss'
+
 export default class App extends React.Component {
   componentDidMount() {
     this.props.actions.didMount()
@@ -11,8 +13,8 @@ export default class App extends React.Component {
     const { meta } = this.props
 
     return (
-      <div className="container">
-        <div className="main">
+      <div className={styles.container}>
+        <div className={styles.main}>
           <nav>
             <ul>
               <li><Link to="/">トップ</Link></li>
@@ -21,7 +23,7 @@ export default class App extends React.Component {
             </ul>
           </nav>
 
-          <div className="screen">
+          <div className={styles.screen}>
             {this.props.children}
 
             <dl>
