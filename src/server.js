@@ -8,7 +8,8 @@ import serialize from 'serialize-javascript'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
-import { createMemoryHistory, match, RouterContext } from 'react-router'
+import { match, RouterContext } from 'react-router'
+import { createMemoryHistory } from 'history'
 import { syncHistoryWithStore } from 'react-router-redux'
 import PropTypes from 'prop-types'
 
@@ -26,16 +27,13 @@ app.use(compression())
 app.use(express.static(path.join(process.cwd(), 'public')))
 
 // any path
-app.use((req, res) => {
+app.get('*', (req, res) => {
   const memoryHistory = createMemoryHistory(res.url)
   const store = configureStore(memoryHistory)
   const history = syncHistoryWithStore(memoryHistory, store)
+  console.log(history)
 
-  match({
-    history,
-    routes,
-    location: req.url
-  }, (error, redirectLocation, renderProps) => {
+  match({ history, routes, location: req.url }, (error, redirectLocation, renderProps) => {
     if (error) {
       res.status(500).send(error.message)
     } else if (redirectLocation) {
@@ -81,7 +79,7 @@ const HTML = ({ content, meta, store }) => (
       <meta property="og:description" content={meta.description} />
       <meta property="og:image" content={meta.img} />
       <meta property="og:url" content={meta.url} />
-      <meta property="og:site_name" content="mycontest" />
+      <meta property="og:site_name" content="mycontent" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@hrfmmymt" />
 
