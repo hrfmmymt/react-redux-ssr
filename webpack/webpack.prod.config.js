@@ -7,8 +7,7 @@ module.exports = [
   // client settings
   {
     entry: [
-      './src/client.js',
-      './src/styles/app.css'
+      './src/index.js'
     ],
     output: {
       path: path.join(__dirname, '..', 'public'),
@@ -59,8 +58,7 @@ module.exports = [
   // server settings
   {
     entry: [
-      './src/server.js',
-      './src/styles/app.css'
+      './src/server.js'
     ],
     target: 'node',
     node: {

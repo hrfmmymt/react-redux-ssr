@@ -7,7 +7,7 @@ import { routerReducer } from 'react-router-redux'
 import thunk from 'redux-thunk'
 
 // reducer
-import * as reducers from './reducers'
+import * as reducers from '../reducers'
 
 export function configureStore (history: string, initialState: boolean) {
   const reducer = combineReducers({

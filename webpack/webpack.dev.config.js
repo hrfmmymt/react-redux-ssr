@@ -6,7 +6,7 @@ module.exports = [
   // client settings
   {
     entry: [
-      './src/client.js'
+      './src/index.js'
     ],
     output: {
       path: path.join(__dirname, '..', 'public'),

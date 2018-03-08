@@ -8,13 +8,13 @@ import serialize from 'serialize-javascript'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
-import { match, RouterContext } from 'react-router'
-import { createMemoryHistory } from 'history'
+import { createMemoryHistory, match, RouterContext } from 'react-router'
+// import { createMemoryHistory } from 'history'
 import { syncHistoryWithStore } from 'react-router-redux'
 import PropTypes from 'prop-types'
 
 // store
-import { configureStore } from './store'
+import { configureStore } from './stores'
 
 // route
 import routes from './routes'
@@ -31,7 +31,6 @@ app.get('*', (req, res) => {
   const memoryHistory = createMemoryHistory(res.url)
   const store = configureStore(memoryHistory)
   const history = syncHistoryWithStore(memoryHistory, store)
-  console.log(history)
 
   match({ history, routes, location: req.url }, (error, redirectLocation, renderProps) => {
     if (error) {
