@@ -1,9 +1,7 @@
-import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 // actions
-import * as meta from '../actions/meta'
 import {didMount} from '../actions/didmount'
 
 // component

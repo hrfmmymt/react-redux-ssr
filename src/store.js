@@ -1,6 +1,5 @@
 /* @flow */
 
-import React from 'react'
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { routerReducer } from 'react-router-redux'
 

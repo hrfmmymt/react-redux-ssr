@@ -1,5 +1,8 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import { Link } from 'react-router'
+
+import styles from './app.scss'
 
 export default class App extends React.Component {
   componentDidMount() {
@@ -10,8 +13,8 @@ export default class App extends React.Component {
     const { meta } = this.props
 
     return (
-      <div className="container">
-        <div className="main">
+      <div className={styles.container}>
+        <div className={styles.main}>
           <nav>
             <ul>
               <li><Link to="/">トップ</Link></li>
@@ -20,7 +23,7 @@ export default class App extends React.Component {
             </ul>
           </nav>
 
-          <div className="screen">
+          <div className={styles.screen}>
             {this.props.children}
 
             <dl>
@@ -41,7 +44,7 @@ export default class App extends React.Component {
 }
 
 App.propTypes = {
-  actions: React.PropTypes.object.isRequired,
-  meta: React.PropTypes.object.isRequired,
-  children: React.PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  meta: PropTypes.object.isRequired,
+  children: PropTypes.object.isRequired
 }

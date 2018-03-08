@@ -10,6 +10,7 @@ import { renderToString } from 'react-dom/server'
 import { Provider } from 'react-redux'
 import { createMemoryHistory, match, RouterContext } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
+import PropTypes from 'prop-types'
 
 // store
 import { configureStore } from './store'
@@ -94,9 +95,9 @@ const HTML = ({ content, meta, store }) => (
 )
 
 HTML.propTypes = {
-  content: React.PropTypes.string.isRequired,
-  meta: React.PropTypes.object.isRequired,
-  store: React.PropTypes.object.isRequired
+  content: PropTypes.string.isRequired,
+  meta: PropTypes.object.isRequired,
+  store: PropTypes.object.isRequired
 }
 
 const port = process.env.PORT || 8080
