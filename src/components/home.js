@@ -20,6 +20,7 @@ export default class Home extends React.Component {
     return (
       <div className={styles.wrapper}>
         <h2>某のホームページ</h2>
+        <img src={profileImage} width='256'/>
         <span>★★★　最新情報　★★★</span>
       </div>
     )

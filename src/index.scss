@@ -1,0 +1,30 @@
+:global {
+  html,
+  body,
+  div,
+  h1,
+  h2,
+  ul,
+  li,
+  dl,
+  dt,
+  dd,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  html {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+  }
+}
